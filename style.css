@@ -1,0 +1,345 @@
+@font-face {
+    font-family: "Guifx";
+    src: url("fonts/Guifx v2 Transports.ttf");
+}
+
+html, body {
+	font-family: arial;
+	margin:0;
+	padding:0;
+}
+
+body {
+	background:#F1F1F1;
+}
+
+#header {
+	padding-top: 0;
+	background:white;
+	border-bottom:solid 4px #0089CF;
+	z-index:4;
+	position:fixed;
+	box-shadow:0px 2px 8px rgba(0,0,0,0.25);
+}
+
+	#header-border {
+		border-bottom:solid 4px #F5931F;
+	}
+	
+	#conteneur_header {
+		margin: 0 auto;
+		width: 950px;
+		height: 50px;
+	}
+
+#contenu {
+	height:200px;
+	margin-bottom:40px;
+}
+	
+	#contenu p {
+		color:black;
+	}
+	
+	.titre {
+		font-size:20px;
+		margin-top:0; 
+		margin-left:0;
+		text-align:left;
+		border-bottom:2px solid;
+	}
+	
+		.trait {
+			text-decoration:line-through;
+			white-space: nowrap
+		}
+
+#presentation {
+	color:#F5941F;
+	margin-left:40px;
+	width: 400px;
+	display: block;
+	float: left;
+	height: 200px;
+}
+
+#webmail {
+	color:#0089CF;
+	margin-right:40px;
+	border-radius: 10px;
+	width: 400px;
+	float:right;
+	position:relative;
+	display: inline-block;
+	height: 200px;
+}
+
+#logo {
+	width: 103px;
+	float:left;
+	margin-left:40px;
+	margin-top:1px;
+}
+
+/************* MENU *************/
+
+#menu {
+	float:right;
+	margin-right:40px;
+}
+
+#menu a {  
+    display:block;  
+    color: black;  
+    text-decoration:none; 	
+}  
+#menu > li,  
+#menu > li li {  
+	position: relative;
+    display:inline-block;  
+    width: 100px;  
+    text-align:center; 
+}  
+#menu > li li { background: transparent none; }  
+#menu > li li a { color: #444; }  
+#menu > li li:hover { background:#eee; }  
+#menu > li:first-child {
+}  
+#menu > li + li { 
+border-left:1px solid #E7E6E6;
+}  
+#menu > li:last-child {     
+}  
+#menu > li:hover {    
+	z-index: 4;
+}  
+
+#menu ul {  
+    position: absolute;
+    top: 2em; left:0;  
+    max-height:0em;  
+    margin:0; padding:0;  
+    background-color:#ddd;  
+    background-image: linear-gradient(#fff,#ddd);  
+    overflow:hidden;  
+    transition: 1s max-height 0.3s;  
+    border-radius: 0 0 8px 8px;  
+}  
+/* ici on change la valeur de max-height au :hover */  
+#menu > li:hover ul {  
+    /* need an adaptation, lower is better, but see it large   */  
+    max-height:13em;  
+}  
+
+/************* CONTENEUR INDEX *************/
+
+#conteneur {
+	background:white;
+	width: 950px;
+	padding-top:60px;
+	margin: 0 auto;
+	border:1px solid #C1C1C1;
+	border-top:1px solid white;
+	border-bottom:1px solid white;
+	position:static;
+	height:auto;
+	font-size:15px;
+}
+
+/************* CARROUSEL *************/
+
+.bouton-prec-conteneur {
+	width:40px;
+	height:150px;
+	margin-top:125px;
+	margin-left:75px;
+	position:relative;
+	float:left;
+	border-right:1px solid #CCCCCC;
+	display:block;
+}
+
+	.bouton {
+		background:#EEEEEE;
+		width:10px;
+		height:10px;
+		margin:65px auto;
+		border-radius:50%;
+		border:2px solid #CCCCCC;
+		box-shadow:1px 1px 1px #9C9C9C inset,
+				   1px 1px 1px #BEBEBE;
+		-webkit-transition: 0.4s;
+		cursor: pointer;
+	}
+	
+	.bouton:hover {
+		background:#EEEEEE;
+		width:20px;
+		height:20px;
+		margin:62px auto;
+		border-radius:50%;
+	}
+	
+		.bouton-prec-conteneur .bouton:hover {
+			background-image:url(images/chevron-gauche.png);
+		}
+
+.bouton-suiv-conteneur {
+	width:40px;
+	height:150px;
+	margin-top:125px;
+	margin-right:75px;
+	position:relative;
+	float:right;
+	border-left:1px solid #CCCCCC;
+}
+		
+		.bouton-suiv-conteneur .bouton:hover {
+			background-image:url(images/chevron-droite.png);
+		}
+
+.carrousel-conteneur {
+	background:#EEEEEE;
+	margin:40px auto 40px;
+	height:350px;
+	width:700px;
+	border:1px solid #CCCCCC;
+}
+	
+	.carrousel {
+		background:white;
+		height:315px;
+		margin-top:0;
+		border:1px solid black;
+		overflow:hidden;
+	}
+
+		.diapo {
+			height:315px;
+			margin-top:0;
+		}
+		
+			.diapo  li{
+				background:red;
+				width:688px;
+				height:305px;
+				list-style:none;
+				margin:5px -35px;
+				overflow:hidden;
+				position:relative;
+			}
+			
+			.diapo  li:first-child{
+				background:blue;
+			}
+			
+			.diapo  li:last-child{
+				background:orange;
+			}
+
+	.bouton-lecture {
+		width:23px;
+		height:23px;
+		margin:5px;
+		float:right;
+		position:relative;
+		cursor: pointer;
+		font-family: "Guifx";
+		text-align: center;
+		line-height:1.2;
+		font-size: 20px;
+		color:#CCCCCC;
+		-webkit-transition: 0.2s;
+	}
+
+		.bouton-lecture:hover {
+			color:black;
+		}
+
+.carrousel-selecteur-base{
+	position: absolute;
+}
+
+	.carrousel-selecteur-base div
+	{
+		background:#CCCCCC;
+		margin:10px;
+		margin-right:5px;
+		width:15px;
+		height:15px;
+		float:left;
+		text-align: center;
+		border-radius:50%;
+		display:block;
+	}
+
+
+	.carrousel-selecteur
+	{
+		position: relative;
+	}
+
+		.carrousel-selecteur div
+		{
+			margin:10px;
+			margin-right:5px;
+			width:15px;
+			height:15px;
+			float:left;
+			text-align: center;
+			border-radius:50%;
+		}
+
+			.carrousel-selecteur div:hover
+			{
+				background: black;
+				margin-top:6px;
+				margin-left:6px;
+				margin-right:1px;
+				width:23px;
+				height:23px;
+				cursor: pointer;
+				z-index:2;
+			}
+			
+			.carrousel-selecteur-hover {
+				background: black;
+				margin-top:6px;
+				margin-left:6px;
+				margin-right:1px;
+				cursor: pointer;
+				z-index:5;
+				-webkit-transition: 0.4s;
+			}
+
+/************* FOOTER *************/
+
+#footer {
+	border-top: 1px solid #E7E6E6;
+	font-size:10px;
+	width:90%;
+	margin: 0 auto;
+}
+
+#footer p{
+	margin-right: 20px;
+}
+
+#footer table {
+	margin: 0 auto;
+}
+
+#pre-footer {
+	border-top:4px solid #0089CF;
+	padding-top: -30px;
+	font-size:10px;
+	background:white;
+}
+
+	#contenu-pre-footer {
+		margin:10px auto;
+	}	
+
+#pre-footer-orange {
+	border-top:4px solid #F5931F;
+}
