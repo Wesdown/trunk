@@ -2,25 +2,34 @@
 		<?php include('includes/header.php'); ?>
 		
 		<!-- bloc du caroussel, affichage des différentes prestations -->
-		<div class='bouton-prec-conteneur'>
-			<div class='bouton'></div>
-		</div>
-		<div class='bouton-suiv-conteneur'>
-			<div class='bouton'></div>
-		</div>
 		<div class='carrousel-conteneur'>
+			<div class='carrousel-selecteur'></div>
 			<div class='carrousel'>
 				<ul class='diapo'>
-					<li></li>
-					<li></li>
-					<li></li>
+					<?php
+						function count_files($dir)
+						{
+							$num = 0;
+							 
+							$dir_handle = opendir($dir);
+							while($entry = readdir($dir_handle))
+							if(is_file($dir.'/'.$entry))
+							$num++;
+							closedir($dir_handle);
+							 
+							return $num;
+						}
+
+						$nbImage = count_files('images/carrousel');
+
+						for ($i = 1; $i <= $nbImage; $i++)
+						{
+							echo ('<li><img src="images/carrousel/img'.$i.'.jpg"></li>');
+						}
+					?>
 				</ul>
 			</div>
-			<div class='carrousel-selecteur-base'>
-			</div>
-			<div class='carrousel-selecteur'>
-			</div>
-			<div class='bouton-lecture'></div>
+			<div class='carrousel-lecture'></div>
 		</div>
 		
 		<!-- bloc qui  affiche les informations de l'entreprise -->

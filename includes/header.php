@@ -2,7 +2,8 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<link href="style.css" rel="stylesheet" type="text/css" media="screen">
+		<link href="css/style.css" rel="stylesheet" type="text/css" media="screen">
+
         <script type="text/javascript" src="js/jquery.js"></script>
 		<script type="text/javascript" src="js/header.js"></script>
 		<script type="text/javascript" src="js/carrousel.js"></script>
@@ -15,7 +16,7 @@
 			<div id='header-border'>
 				<div id='conteneur_header'>
 					<div id='logo'>
-						
+						<img src="images/logo_ARC.png">
 					</div>
 					
 					<!-- bloc du menu -->

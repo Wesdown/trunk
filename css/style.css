@@ -1,8 +1,3 @@
-@font-face {
-    font-family: "Guifx";
-    src: url("fonts/Guifx v2 Transports.ttf");
-}
-
 html, body {
 	font-family: arial;
 	margin:0;
@@ -13,13 +8,14 @@ body {
 	background:#F1F1F1;
 }
 
+
 #header {
 	padding-top: 0;
 	background:white;
 	border-bottom:solid 4px #0089CF;
 	z-index:4;
 	position:fixed;
-	box-shadow:0px 2px 8px rgba(0,0,0,0.25);
+	-webkit-transition: 0.4s;
 }
 
 	#header-border {
@@ -32,9 +28,13 @@ body {
 		height: 50px;
 	}
 
+	.floatable {
+		box-shadow:0px 2px 8px rgba(0,0,0,0.25);
+	}
+
 #contenu {
-	height:200px;
 	margin-bottom:40px;
+	height:150px;
 }
 	
 	#contenu p {
@@ -58,6 +58,7 @@ body {
 	color:#F5941F;
 	margin-left:40px;
 	width: 400px;
+	height:300px;
 	display: block;
 	float: left;
 	height: 200px;
@@ -136,115 +137,54 @@ border-left:1px solid #E7E6E6;
 #conteneur {
 	background:white;
 	width: 950px;
+	height:auto;
 	padding-top:60px;
 	margin: 0 auto;
-	border:1px solid #C1C1C1;
-	border-top:1px solid white;
-	border-bottom:1px solid white;
 	position:static;
 	height:auto;
 	font-size:15px;
+	border:1px solid #C1C1C1;
+	border-top:1px solid white;
+	border-bottom:1px solid white;
 }
 
 /************* CARROUSEL *************/
-
-.bouton-prec-conteneur {
-	width:40px;
-	height:150px;
-	margin-top:125px;
-	margin-left:75px;
-	position:relative;
-	float:left;
-	border-right:1px solid #CCCCCC;
-	display:block;
-}
-
-	.bouton {
-		background:#EEEEEE;
-		width:10px;
-		height:10px;
-		margin:65px auto;
-		border-radius:50%;
-		border:2px solid #CCCCCC;
-		box-shadow:1px 1px 1px #9C9C9C inset,
-				   1px 1px 1px #BEBEBE;
-		-webkit-transition: 0.4s;
-		cursor: pointer;
-	}
-	
-	.bouton:hover {
-		background:#EEEEEE;
-		width:20px;
-		height:20px;
-		margin:62px auto;
-		border-radius:50%;
-	}
-	
-		.bouton-prec-conteneur .bouton:hover {
-			background-image:url(images/chevron-gauche.png);
-		}
-
-.bouton-suiv-conteneur {
-	width:40px;
-	height:150px;
-	margin-top:125px;
-	margin-right:75px;
-	position:relative;
-	float:right;
-	border-left:1px solid #CCCCCC;
-}
-		
-		.bouton-suiv-conteneur .bouton:hover {
-			background-image:url(images/chevron-droite.png);
-		}
-
 .carrousel-conteneur {
-	background:#EEEEEE;
-	margin:40px auto 40px;
+	margin:-3px auto 40px;
 	height:350px;
-	width:700px;
-	border:1px solid #CCCCCC;
+	width:auto;
+	overflow: hidden;
+	position:relative;
 }
 	
 	.carrousel {
 		background:white;
-		height:315px;
+		height:350px;
 		margin-top:0;
-		border:1px solid black;
 		overflow:hidden;
 	}
 
 		.diapo {
-			height:315px;
+			height:350px;
 			margin-top:0;
 		}
 		
-			.diapo  li{
-				background:red;
-				width:688px;
-				height:305px;
+			.diapo li{
+				width:950px;
+				height:350px;
 				list-style:none;
-				margin:5px -35px;
-				overflow:hidden;
+				float: right;
 				position:relative;
 			}
-			
-			.diapo  li:first-child{
-				background:blue;
-			}
-			
-			.diapo  li:last-child{
-				background:orange;
-			}
 
-	.bouton-lecture {
+	.bouton-lecture 
+	{
 		width:23px;
 		height:23px;
-		margin:5px;
 		float:right;
-		position:relative;
+		position:absolute;
 		cursor: pointer;
-		font-family: "Guifx";
+		margin:-40px 10px;
 		text-align: center;
 		line-height:1.2;
 		font-size: 20px;
@@ -252,65 +192,70 @@ border-left:1px solid #E7E6E6;
 		-webkit-transition: 0.2s;
 	}
 
-		.bouton-lecture:hover {
-			color:black;
-		}
 
-.carrousel-selecteur-base{
-	position: absolute;
-}
-
-	.carrousel-selecteur-base div
-	{
-		background:#CCCCCC;
-		margin:10px;
-		margin-right:5px;
-		width:15px;
-		height:15px;
-		float:left;
-		text-align: center;
-		border-radius:50%;
-		display:block;
-	}
-
-
-	.carrousel-selecteur
-	{
-		position: relative;
-	}
-
-		.carrousel-selecteur div
-		{
-			margin:10px;
-			margin-right:5px;
-			width:15px;
-			height:15px;
-			float:left;
-			text-align: center;
+		.pause {
+			width:23px;
+			height:23px;
 			border-radius:50%;
+			position:relative;
+			border: 5px solid transparent;	
 		}
 
-			.carrousel-selecteur div:hover
-			{
-				background: black;
-				margin-top:6px;
-				margin-left:6px;
-				margin-right:1px;
-				width:23px;
-				height:23px;
-				cursor: pointer;
-				z-index:2;
+		.pause:hover {
+			border: 5px solid white;
+			background:white;
+		}
+
+			.pause::before {
+				position: absolute;
+				background: #CCCCCC;
+				content: "";
+				top: 5px;
+				left: 5px;
+				width: 4px;
+				height: 14px;
 			}
+
+			.pause::before:hover {
+				background: white;
+			}
+
+			.pause::after {
+				position: absolute;
+				background: #CCCCCC;
+				content: "";
+				top: 5px;
+				right: 5px;
+				width: 4px;
+				height: 14px;
+			}
+
+		.play {
+			width:23px;
+			height:23px;
+			border-radius:50%;
+			position:relative;
+			border: 5px solid transparent;	
+		}
+
+		.play:hover {
+			border: 5px solid white;
+			background:white;	
+		}
+
+			.play::before {
+				position: absolute;
+				content: "";
+				top: 3px;
+				left: 7px;
+				width: 1px;
+				height: 1px;
+				border-top: 8px solid rgba(44, 44, 44, 0);
+				border-bottom: 8px solid transparent;
+				border-left: 12px solid #CCCCCC;
+			}
+
 			
-			.carrousel-selecteur-hover {
-				background: black;
-				margin-top:6px;
-				margin-left:6px;
-				margin-right:1px;
-				cursor: pointer;
-				z-index:5;
-				-webkit-transition: 0.4s;
-			}
 
 /************* FOOTER *************/
 
@@ -332,13 +277,14 @@ border-left:1px solid #E7E6E6;
 #pre-footer {
 	border-top:4px solid #0089CF;
 	padding-top: -30px;
-	font-size:10px;
+	font-size:12px;
 	background:white;
 }
 
 	#contenu-pre-footer {
 		margin:10px auto;
-	}	
+		text-align: center;
+	}
 
 #pre-footer-orange {
 	border-top:4px solid #F5931F;
