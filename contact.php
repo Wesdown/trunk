@@ -1,7 +1,7 @@
 <?php include('includes/header.php'); ?>
 
 	<!-- bloc affichant les contacts de l'entreprise ainsi que le plan d'accès -->
-	<div id='contact'>
+	<div id='contenu'>
 	
 		<!-- bloc qui affiche le plan d'accès -->
 		<div class='map'>

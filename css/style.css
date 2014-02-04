@@ -153,7 +153,8 @@ border-left:1px solid #E7E6E6;
 }
 
 /************* CARROUSEL *************/
-.carrousel-conteneur {
+.carrousel-conteneur 
+{
 	margin:-3px auto 40px;
 	height:350px;
 	width:auto;
@@ -164,21 +165,31 @@ border-left:1px solid #E7E6E6;
 	.carrousel-selecteur
 	{
 		background:white;
-		height:350px;
+		height:349px;
 		width:150px;
-		margin-left:-151px;
+		margin-left:-152px;
 		float:left;
 		position:relative;
 		z-index:2;
+		border-bottom: 1px solid #E7E6E6;
+		overflow:auto;
 	}
 
 		.carrousel-selecteur div
 		{
 			background:red;
-			height:109px;
+			height:52px;
 			width:140px;
 			margin:5px;
+			-webkit-transition: 1s;
+			cursor: pointer;
 		}
+
+			.carrousel-selecteur div img
+			{
+				height:100%;
+				width:100%;
+			}
 
 	.carrousel-selecteur-languette 
 	{
@@ -221,6 +232,14 @@ border-left:1px solid #E7E6E6;
 				float: right;
 				position:relative;
 			}
+
+				.carrousel-selecteur-noirEtBlanc {
+					filter: grayscale(100%);
+				    -webkit-filter: grayscale(100%);
+				    -moz-filter: grayscale(100%);
+				    -ms-filter: grayscale(100%);
+				    -o-filter: grayscale(100%);
+				}
 
 	.bouton-lecture {
 	    float: right;
