@@ -4,6 +4,7 @@ $(document).ready(function() {
 	var nbElement = $(".diapo li").length - 1;
 	var height = reference.height();
 	var pause = 0;
+	var navVisible = 0;
 	var tabLi = new Array();
 	var iSelect = 0;
 	$(".diapo").css("height", (reference.height() * nbElement));
@@ -28,6 +29,38 @@ $(document).ready(function() {
 
 
 	/******** navigation *********/
+	$('.carrousel-selecteur-languette').click(function() {
+	    if (navVisible == 0)
+	    {
+	    	affNavigation('151px');
+	    	navVisible = 1;
+	    	$('.carrousel-selecteur-languette').text(':');
+	    }
+	    else
+	    {
+	    	affNavigation('0');
+	    	navVisible = 0;
+	    	$('.carrousel-selecteur-languette').text('"');
+	    }
+	});
+
+	$('.carrousel-conteneur').on('mouseenter', function() {
+		if (navVisible == 0)
+		{
+			$('.carrousel-selecteur-languette').text('"');
+		}
+	}).on('mouseleave', function(){
+		if (navVisible == 0) {
+			$('.carrousel-selecteur-languette').text('');
+		}
+	});
+
+	function affNavigation(pixel)
+	{
+		$('.carrousel-selecteur').animate({left:pixel},1000);
+		$('.carrousel-selecteur-languette').animate({left:pixel},1000);
+	}
+
 	for (var i = 0; i <= nbElement; i++)
 	{
 		$('.carrousel-selecteur').append('<div id='+i+'></div>');
@@ -50,7 +83,7 @@ $(document).ready(function() {
 	var cpt = 0;
 	$('#'+cpt).addClass('carrousel-selecteur-hover');
 	
-	$(".bouton-prec-conteneur .bouton").click(function()  {
+	$(".bouton-prec-conteneur .bouton").click(function() {
 		iSelect = cpt;
 		if (cpt > 0) {
 			cpt--;

@@ -160,6 +160,47 @@ border-left:1px solid #E7E6E6;
 	overflow: hidden;
 	position:relative;
 }
+
+	.carrousel-selecteur
+	{
+		background:white;
+		height:350px;
+		width:150px;
+		margin-left:-151px;
+		float:left;
+		position:relative;
+		z-index:2;
+	}
+
+		.carrousel-selecteur div
+		{
+			background:red;
+			height:109px;
+			width:140px;
+			margin:5px;
+		}
+
+	.carrousel-selecteur-languette 
+	{
+		height:23px;
+		width: 23px;
+		margin-top:162px;
+		margin-left:-1px;
+		position:absolute;
+		display:block;
+		font-family: "Guifx";
+		color:#CCC;
+		font-size:23px;
+		text-align: center;
+		line-height: 1;
+		z-index:1;
+		cursor: pointer;
+	}
+
+		.carrousel-selecteur-languette:hover
+		{
+			color:white;
+		}
 	
 	.carrousel {
 		background:white;
@@ -194,7 +235,7 @@ border-left:1px solid #E7E6E6;
 	    line-height: 1.2;
 	    color: #CCCCCC;
 	    font-family: "Guifx";
-	    -webkit-transition: 0.2s;
+	    -webkit-transition: 0.3s;
 	    cursor: pointer;
 	}
 

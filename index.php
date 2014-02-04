@@ -4,6 +4,7 @@
 		<!-- bloc du caroussel, affichage des différentes prestations -->
 		<div class='carrousel-conteneur'>
 			<div class='carrousel-selecteur'></div>
+			<div class='carrousel-selecteur-languette'></div>
 			<div class='carrousel'>
 				<ul class='diapo'>
 					<?php
