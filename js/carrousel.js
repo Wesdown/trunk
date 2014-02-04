@@ -7,12 +7,27 @@ $(document).ready(function() {
 	var tabLi = new Array();
 	var iSelect = 0;
 	$(".diapo").css("height", (reference.height() * nbElement));
-	
+
+
+	/******** slide automatique *********/
 	lire();
+	
+	function lire() {
+		interval = setInterval(function(){
+			iSelect = cpt;
+			cpt++;
+			if (cpt > nbElement) {
+				cpt = 0;
+			}
+			$('#'+cpt).addClass('carrousel-selecteur-hover');
+			$('#'+(iSelect)).removeClass('carrousel-selecteur-hover');
+			$('.diapo').animate({marginTop:- (height * cpt)},1000);
+		}, 3500);
+	}
 
 
 
-	// navigation
+	/******** navigation *********/
 	for (var i = 0; i <= nbElement; i++)
 	{
 		$('.carrousel-selecteur').append('<div id='+i+'></div>');
@@ -28,7 +43,7 @@ $(document).ready(function() {
 
 
 
-	// navigation au click
+	/******** navigation au click *********/
 	for (var i = 0; i <= nbElement; i++) {
 		tabLi[i] = i;
 	}
@@ -77,40 +92,45 @@ $(document).ready(function() {
 
 
 
-	// bouton start et pause
-	$('.carrousel-lecture').addClass('bouton-lecture');
-	$('.bouton-lecture').addClass('pause');
-	
+	/******** Bouton play/pause *********/
+	affBoutonLecture();
+
 	$('.bouton-lecture').click(function () {
 		if (pause == 0) 
 		{
 			clearInterval(interval);
-			$('.bouton-lecture').removeClass('pause');
-			$('.bouton-lecture').addClass('play');
+			$('.bouton-lecture').text('1');
 			pause = 1;
 		}
 		else
 		{
 			lire();
-			$('.bouton-lecture').removeClass('play')
-			$('.bouton-lecture').addClass('pause');
+			$('.bouton-lecture').text('2');
 			pause = 0;
 		}
 	});
 
+	$('.carrousel-conteneur').on('mouseenter', function() {
+	    affBoutonLecture();
+	}).on('mouseleave', function(){
+		if (pause == 0) {
+			delBoutonLecture();
+		}
+	});
 
+	function affBoutonLecture() {
+		$('.carrousel-lecture').addClass('bouton-lecture');
+		if (pause == 0)
+		{
+			$('.bouton-lecture').text('2');
+		}
+		else
+		{
+			$('.bouton-lecture').text('1');
+		}
+	}
 
-	// slide automatique
-	function lire() {
-		interval = setInterval(function(){
-			iSelect = cpt;
-			cpt++;
-			if (cpt > nbElement) {
-				cpt = 0;
-			}
-			$('#'+cpt).addClass('carrousel-selecteur-hover');
-			$('#'+(iSelect)).removeClass('carrousel-selecteur-hover');
-			$('.diapo').animate({marginTop:- (height * cpt)},1000);
-		}, 3500);
+	function delBoutonLecture() {
+		$('.carrousel-lecture').removeClass('bouton-lecture');
 	}
 });

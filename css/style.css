@@ -1,3 +1,8 @@
+@font-face {
+    font-family: "Guifx";
+    src: url('../fonts/Guifx v2 Transports.ttf');
+}
+
 html, body {
 	font-family: arial;
 	margin:0;
@@ -7,7 +12,6 @@ html, body {
 body {
 	background:#F1F1F1;
 }
-
 
 #header {
 	padding-top: 0;
@@ -177,83 +181,27 @@ border-left:1px solid #E7E6E6;
 				position:relative;
 			}
 
-	.bouton-lecture 
-	{
-		width:23px;
-		height:23px;
-		float:right;
-		position:absolute;
-		cursor: pointer;
-		margin:-40px 10px;
-		text-align: center;
-		line-height:1.2;
-		font-size: 20px;
-		color:#CCCCCC;
-		-webkit-transition: 0.2s;
+	.bouton-lecture {
+	    float: right;
+	    position: relative;
+	    width: 23px;
+	    height: 23px;
+	    margin: -40px 10px;
+	    border: 5px solid transparent;
+	    border-radius: 50%;
+	    text-align: center;
+	    font-size: 20px;
+	    line-height: 1.2;
+	    color: #CCCCCC;
+	    font-family: "Guifx";
+	    -webkit-transition: 0.2s;
+	    cursor: pointer;
 	}
 
-
-		.pause {
-			width:23px;
-			height:23px;
-			border-radius:50%;
-			position:relative;
-			border: 5px solid transparent;	
-		}
-
-		.pause:hover {
+		.bouton-lecture:hover {
 			border: 5px solid white;
 			background:white;
 		}
-
-			.pause::before {
-				position: absolute;
-				background: #CCCCCC;
-				content: "";
-				top: 5px;
-				left: 5px;
-				width: 4px;
-				height: 14px;
-			}
-
-			.pause::before:hover {
-				background: white;
-			}
-
-			.pause::after {
-				position: absolute;
-				background: #CCCCCC;
-				content: "";
-				top: 5px;
-				right: 5px;
-				width: 4px;
-				height: 14px;
-			}
-
-		.play {
-			width:23px;
-			height:23px;
-			border-radius:50%;
-			position:relative;
-			border: 5px solid transparent;	
-		}
-
-		.play:hover {
-			border: 5px solid white;
-			background:white;	
-		}
-
-			.play::before {
-				position: absolute;
-				content: "";
-				top: 3px;
-				left: 7px;
-				width: 1px;
-				height: 1px;
-				border-top: 8px solid rgba(44, 44, 44, 0);
-				border-bottom: 8px solid transparent;
-				border-left: 12px solid #CCCCCC;
-			}
 
 			
 

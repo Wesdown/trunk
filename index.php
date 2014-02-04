@@ -29,7 +29,7 @@
 					?>
 				</ul>
 			</div>
-			<div class='carrousel-lecture'></div>
+			<div class='carrousel-lecture'><span></span></div>
 		</div>
 		
 		<!-- bloc qui  affiche les informations de l'entreprise -->
@@ -49,7 +49,7 @@
 					d'ingénieurs expérimentés, 
 					maîtrisant l'Audit, le Design, 
 					la Gestion de Projets, 
-					et les Services managés..
+					et les Services managés.
 				</p>
 			</div>
 			
