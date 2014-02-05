@@ -141,11 +141,9 @@ border-left:1px solid #E7E6E6;
 #conteneur {
 	background:white;
 	width: 950px;
-	height:auto;
 	padding-top:60px;
 	margin: 0 auto;
 	position:static;
-	height:auto;
 	font-size:15px;
 	border:1px solid #C1C1C1;
 	border-top:1px solid white;
