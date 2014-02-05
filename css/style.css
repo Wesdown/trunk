@@ -18,7 +18,6 @@ body {
 	background:white;
 	border-bottom:solid 4px #0089CF;
 	z-index:4;
-	position:fixed;
 	-webkit-transition: 0.4s;
 }
 
@@ -120,7 +119,7 @@ body {
 #conteneur {
 	background:white;
 	width: 950px;
-	padding-top:60px;
+	padding-top:2px;
 	margin: 0 auto;
 	position:static;
 	font-size:15px;
