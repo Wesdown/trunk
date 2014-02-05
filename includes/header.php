@@ -5,7 +5,8 @@
 		<link href="css/style.css" rel="stylesheet" type="text/css" media="screen">
 
         <script type="text/javascript" src="js/jquery.js"></script>
-		<script type="text/javascript" src="js/header.js"></script>
+        <script type="text/javascript" src="js/header.js"></script>
+		<script type="text/javascript" src="js/dw_scroll_c.js"></script>
 		<script type="text/javascript" src="js/carrousel.js"></script>
 		<script type="text/javascript" src="js/autoHeight.js"></script>
 		

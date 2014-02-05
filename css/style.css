@@ -164,14 +164,12 @@ border-left:1px solid #E7E6E6;
 
 	.carrousel-selecteur
 	{
-		background:white;
 		height:349px;
-		width:150px;
-		margin-left:-152px;
+		width:164px;
+		margin-left:-165px;
 		float:left;
 		position:relative;
 		z-index:2;
-		border-bottom: 1px solid #E7E6E6;
 		overflow:auto;
 	}
 
