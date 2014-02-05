@@ -23,24 +23,11 @@
 					<!-- bloc du menu -->
 					<div id='navigation'>
 							<ul id="menu">  
-								<li><a href="index.php">Accueil</a></li>
-								<li><a href="#">Partenaires</a></li>
-								<li><a href="#">Produits</a> 
-									<ul>  
-										<li><a href="#">Produits 1</a></li>  
-										<li><a href="#">Produits 2</a></li>  
-										<li><a href="#">Produits 3</a></li>  
-										<li><a href="#">Produits 4</a></li>  
-									</ul>  
-								</li>
-								<li><a href="#">Prestations</a>  
-									<ul>  
-										<li><a href="#">Prestations 1</a></li>  
-										<li><a href="#">Prestations 2</a></li>  
-										<li><a href="#">Prestations 3</a></li>  
-									</ul>  
-								</li>
-								<li><a href='contact.php'>Contact</a></li>
+								<li><a href="index.php">Accueil</a></li><!--
+						     --><li><a href="#">Partenaires</a></li><!--
+							 --><li><a href="#">Produits</a></li><!--
+							 --><li><a href="#">Prestations</a></li><!--  
+							 --><li><a href='contact.php'>Contact</a></li>
 							</ul>
 					</div>
 				</div>

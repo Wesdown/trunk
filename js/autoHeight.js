@@ -5,13 +5,21 @@ jQuery(document).ready(function($){
 	var headerHeight = $('#header').height();
 	var carrouselHeight = $('.carrousel-conteneur').height()
 	var total = 0;
+	
 	detectViewHeight();
 
 	function detectViewHeight()
 	{
 		if (ecranHeight > bodyHeight)
 		{
-			total = ecranHeight - footerHeight*2 - headerHeight - 12 - carrouselHeight;
+			if (carrouselHeight != null)
+			{
+				total = ecranHeight - footerHeight*2 - headerHeight - 12 - carrouselHeight - 40;
+			}
+			else
+			{
+				total = ecranHeight - footerHeight*2 - headerHeight - 12;
+			}
 			$('#contenu').css('height', total + 'px');
 		}
 	}
