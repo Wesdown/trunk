@@ -23,7 +23,7 @@ $(document).ready(function() {
 	    if (navVisible == 0)
 	    {
 	    	affNavigation('165px');
-	   
+
 	    	navVisible = 1;
 	    	$('.carrousel-selecteur-languette').text(':');
 	    }
@@ -61,24 +61,28 @@ $(document).ready(function() {
 
 
 	/******** navigation au click *********/
-	$('.carrousel-selecteur div').click(function() {
+	$('.carrousel-selecteur div').click(function() 
+	{	
 		id = $(this).attr("id");
-		if ((id - 1 != cpt))
+		diapoAct = $('.diapo li').attr("id").substring(5,6);
+		cpt = 0;
+
+		while (id != diapoAct)
 		{
-			iSelect = cpt + 1;
-			cpt = id - 1;
-			clearInterval(interval);
-			$('#'+(cpt + 1)).removeClass('carrousel-selecteur-noirEtBlanc');
-			$('#'+(iSelect)).addClass('carrousel-selecteur-noirEtBlanc');
-			$('.diapo').animate({marginTop:- (height * cpt)},1000);
-			if (pause == 0)
+			if (diapoAct == (nbElement + 1))
 			{
-				lire();
+				diapoAct = 0;
 			}
+			cpt++;
+			diapoAct++;
 		}
-		else
+
+		clearInterval(interval);
+		
+		$('.diapo').animate({marginTop:- (height * cpt)},1000);
+		
+		if (pause == 0)
 		{
-			clearInterval(interval);
 			lire();
 		}
 	});
@@ -110,7 +114,7 @@ $(document).ready(function() {
 			delBoutonLecture();
 		}
 	});
-	
+
 
 
 	function lire() {
@@ -120,9 +124,20 @@ $(document).ready(function() {
 			if (cpt > nbElement) {
 				cpt = 0;
 			}
-			$('#'+(cpt+1)).removeClass('carrousel-selecteur-noirEtBlanc');
-			$('#'+(iSelect + 1)).addClass('carrousel-selecteur-noirEtBlanc');
-			$('.diapo').animate({marginTop:- (height * cpt)},1000);
+			$('.diapo').animate({marginTop:- (height)},1000, function() {
+				$(this).css({marginTop:0}).find("li:last").after($(this).find("li:first"));  
+			});
+
+			container = $('.carrousel-selecteur').find('div:first').html();
+			idDiv = $('.carrousel-selecteur').find('div:first').attr('id');
+			$('.carrousel-selecteur').append('<div id='+idDiv+' class="carrousel-selecteur-noirEtBlanc">'+container+'</div>');
+
+			$('.carrousel-selecteur').animate({marginTop:- (52)},1000, function() {
+				$(this).css({marginTop:0}).find("div:last").after($(this).find("div:first"));
+				$(this).find('div:last').remove();
+				$(this).find('div:last').addClass('carrousel-selecteur-noirEtBlanc'); 
+				$(this).find('div:first').removeClass('carrousel-selecteur-noirEtBlanc');
+			});
 		}, 3500);
 	}
 

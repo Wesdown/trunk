@@ -146,7 +146,6 @@ body {
 		float:left;
 		position:relative;
 		z-index:2;
-		overflow:auto;
 	}
 
 		.carrousel-selecteur div

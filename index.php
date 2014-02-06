@@ -25,14 +25,14 @@
 
 						for ($i = 1; $i <= $nbImage; $i++)
 						{
-							echo ('<li><img src="images/carrousel/img'.$i.'.jpg"></li>');
+							echo ('<li id="diapo'.$i.'"><img src="images/carrousel/img'.$i.'.jpg"></li>');
 						}
 					?>
 				</ul>
 			</div>
 			<div class='carrousel-lecture'><span></span></div>
 		</div>
-		
+		<div id='cpt'></div>
 		<!-- bloc qui  affiche les informations de l'entreprise -->
 		<div id='contenu'>
 			<div id='presentation'>

@@ -3,7 +3,7 @@
 				<div id='pre-footer'>
 					<div id='contenu-pre-footer'>
 						Point E – Tour de L’œuf - Impasse Face Piscine Olympique - B.P 3377</br>
-						Tel : (221) 33 859 85 85 - Fax : (221) 33 859 85 84 - Mail : arc@arc.sn
+						Tel : (221) 33 859 85 85 - Fax : (221) 33 859 85 84 - Hotline : 88 428 9191 - Mail : arc@arc.sn
 					</div>
 				</div>
 			</div>
