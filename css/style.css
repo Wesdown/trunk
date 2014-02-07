@@ -154,7 +154,7 @@ body {
 			height:52px;
 			width:140px;
 			margin:5px;
-			-webkit-transition: 1s;
+			-webkit-transition: 0.4s;
 			cursor: pointer;
 		}
 
@@ -205,11 +205,6 @@ body {
 				float: right;
 				position:relative;
 			}
-
-				.carrousel-selecteur-noirEtBlanc {
-					filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale");
-				    -webkit-filter: grayscale(100%);
-				}
 
 	.bouton-lecture {
 	    float: right;

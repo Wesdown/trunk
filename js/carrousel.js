@@ -78,8 +78,22 @@ $(document).ready(function() {
 		}
 
 		clearInterval(interval);
-		
-		$('.diapo').animate({marginTop:- (height * cpt)},1000);
+
+		$('.diapo').animate({marginTop:- (height * cpt)},1000, function() {
+			marginTop = $(this).css('margin-top');
+
+			longueurChaine = marginTop.length;
+			marginTop = marginTop.substring(1,longueurChaine);
+			marginTop = marginTop.substring(0, longueurChaine - 3);
+
+			while (marginTop > 0)
+			{
+				marginTop = marginTop - height;
+				$(this).css({marginTop:marginTop}).find("li:last").after($(this).find("li:first"));
+			}
+
+
+		});
 		
 		if (pause == 0)
 		{
@@ -119,26 +133,12 @@ $(document).ready(function() {
 
 	function lire() {
 		interval = setInterval(function(){
-			iSelect = cpt;
-			cpt++;
-			if (cpt > nbElement) {
-				cpt = 0;
-			}
+
 			$('.diapo').animate({marginTop:- (height)},1000, function() {
-				$(this).css({marginTop:0}).find("li:last").after($(this).find("li:first"));  
+				$(this).css({marginTop:0}).find("li:last").after($(this).find("li:first"));
 			});
 
-			container = $('.carrousel-selecteur').find('div:first').html();
-			idDiv = $('.carrousel-selecteur').find('div:first').attr('id');
-			$('.carrousel-selecteur').append('<div id='+idDiv+' class="carrousel-selecteur-noirEtBlanc">'+container+'</div>');
-
-			$('.carrousel-selecteur').animate({marginTop:- (52)},1000, function() {
-				$(this).css({marginTop:0}).find("div:last").after($(this).find("div:first"));
-				$(this).find('div:last').remove();
-				$(this).find('div:last').addClass('carrousel-selecteur-noirEtBlanc'); 
-				$(this).find('div:first').removeClass('carrousel-selecteur-noirEtBlanc');
-			});
-		}, 3500);
+		}, 5500);
 	}
 
 	function affBoutonLecture() {
