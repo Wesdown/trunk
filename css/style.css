@@ -3,6 +3,25 @@
     src: url('../fonts/Guifx v2 Transports.ttf');
 }
 
+@font-face {
+    font-family: "LigatureSymbols";
+    src: url('LigatureSymbols-2.11.ttf') format('truetype');
+}
+
+.LigatureSymbols {
+     font-family: 'LigatureSymbols';
+    -webkit-text-rendering: optimizeLegibility;
+    -moz-text-rendering: optimizeLegibility;
+    -ms-text-rendering: optimizeLegibility;
+    -o-text-rendering: optimizeLegibility;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+    -ms-font-smoothing: antialiased;
+    -o-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+}
+
 html, body {
 	font-family: arial;
 	margin:0;
@@ -11,6 +30,15 @@ html, body {
 
 body {
 	background:#F1F1F1;
+}
+
+li, a {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+	color:black;
 }
 
 #header {
@@ -22,6 +50,7 @@ body {
 }
 
 	#header-border {
+		top:0;
 		border-bottom:solid 4px #F5931F;
 	}
 	
@@ -76,43 +105,75 @@ body {
 	margin-top:1px;
 }
 
+.lien {
+	background:-webkit-linear-gradient(left,white 0%, #FBFBFB 1%, #FBFBFB 25%, #FBFBFB 99%, white 100%);
+	width:100px;
+	height:50px;
+	text-align: center;
+	color:#7E7E7E;
+	text-shadow:1px 1px 1px white;
+	line-height: 3;
+	display:block;
+	float:right;
+	border-left:1px solid #7E7E7E;
+	border-right:1px solid #7E7E7E;
+}
+
 /************* MENU *************/
 
-#menu 
-{
+#navigation1 {
 	float:right;
-	margin-right:40px;
 }
 
-#menu a 
-{  
-    display:block;  
-    color: black;
-    text-decoration:none;
-    padding:0 20px;
-    text-shadow:0 1px 0 white;
-}
+		#menu1 a {
+			display :block;
+			margin-left:5px;
+		}
 
-#menu ul {  
-    position: absolute;
-    top: 2em; left:0;  
-    max-height:0em;  
-    margin:0; padding:0;   
-    overflow:hidden;  
-    transition: 1s max-height 0.3s;  
-    border-radius: 0 0 8px 8px;  
-}
+			#menu1 a span {
+				font-size: 20px;
+			}
 
-#menu li 
-{  
-    display:inline-block;    
-    text-align:center; 
-}
+		#menu1 li {
+			display:inline-block;
+			padding-right:5px;
+		}
 
-#menu li + li 
-{ 
-	border-left:1px solid #E7E6E6;
-}
+		#menu1 li:hover {
+			border-bottom:2px solid #F5931F;
+		}
+
+			#menu1 li:hover span {
+				color:#F5931F;
+			}
+
+			.page {
+				border-bottom:2px solid #0089CF;
+			}
+
+				.page a span{
+					color: #0089CF;
+				}
+
+/************* CONTACT *************/
+
+
+
+	.google-map {
+		position:absolute;
+		float:left;
+		height:;
+	}
+
+		#map {
+			height:500px;
+			width:500px;
+		}
+
+	.info-contact p {
+		top:0;
+		float:right;
+	}
 
 /************* CONTENEUR INDEX *************/
 
@@ -146,6 +207,7 @@ body {
 		float:left;
 		position:relative;
 		z-index:2;
+		overflow:auto;
 	}
 
 		.carrousel-selecteur div

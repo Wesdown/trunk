@@ -10,6 +10,10 @@
 		
 		<!-- bloc qui affiche les informations détaillées -->
 		<div class='info-contact'>
+			<div class='google-map'>
+				<div id='map'>
+				</div>
+			</div>
 			<p> Point E – Tour de L’œuf<br/>
 				Impasse Face Piscine Olympique<br/>
 				B.P 3377<br/>

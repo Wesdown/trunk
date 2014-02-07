@@ -1,5 +1,8 @@
 jQuery(document).ready(function($){
 	
+	$('#header').css('position', 'fixed');
+	$('#conteneur').css('padding-top','60px');
+
 	var detectViewPort = function(){
 		var taille = $('body').width();
 		$('#header-border').css('width', taille);
