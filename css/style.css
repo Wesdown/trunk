@@ -106,7 +106,7 @@ a {
 }
 
 .lien {
-	background:-webkit-linear-gradient(left,white 0%, #FBFBFB 1%, #FBFBFB 25%, #FBFBFB 99%, white 100%);
+	background:white;
 	width:100px;
 	height:50px;
 	text-align: center;
@@ -115,8 +115,6 @@ a {
 	line-height: 3;
 	display:block;
 	float:right;
-	border-left:1px solid #7E7E7E;
-	border-right:1px solid #7E7E7E;
 }
 
 /************* MENU *************/
